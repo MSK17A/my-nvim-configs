@@ -7,7 +7,9 @@ local opts = {
     null_ls.builtins.formatting.golines,
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.pyink,
-    null_ls.builtins.diagnostics.flake8
+    null_ls.builtins.diagnostics.flake8,
+    null_ls.builtins.formatting.clang_format,
+    null_ls.builtins.formatting.rustfmt,
   },
   on_attach = function (client, bufnr)
    if client.supports_method("textDocument/formatting") then

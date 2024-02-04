@@ -10,7 +10,7 @@ local plugins = {
 },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = {"go", "javascript", "javascriptreact", "typescript", "typescriptreact", "python"},
+    ft = {"go", "javascript", "javascriptreact", "typescript", "typescriptreact", "python", "cpp", "rust"},
     opts = function ()
       return require "custom.configs.null-ls"
     end

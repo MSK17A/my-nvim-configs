@@ -3,7 +3,7 @@ local on_attach = configs.on_attach
 local capabilities = configs.capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "clangd", "gopls", "tsserver", "rust_analyzer" }
+local servers = { "html", "cssls", "clangd", "gopls", "tsserver", "rust_analyzer", "pyright" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -12,18 +12,18 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- configure pyright
-lspconfig["pyright"].setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-  settings = {
-    python = {
-      analysis = {
-        typeCheckingMode = "off",
-      },
-    },
-  },
-}
+-- -- configure pyright
+-- lspconfig["pyright"].setup {
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   settings = {
+--     python = {
+--       analysis = {
+--         typeCheckingMode = "off",
+--       },
+--     },
+--   },
+-- }
 
 -- Without the loop, you would have to manually set up each LSP 
 -- 

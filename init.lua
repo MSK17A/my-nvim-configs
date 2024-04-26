@@ -22,3 +22,6 @@ require "plugins"
 
 vim.o.wrap = false
 vim.o.sidescroll = 1
+
+vim.cmd('highlight Comment cterm=italic gui=italic')
+vim.cmd('highlight Type cterm=italic gui=italic')

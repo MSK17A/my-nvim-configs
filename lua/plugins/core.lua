@@ -1,3 +1,4 @@
+local options = require("vim.filetype.options")
 return {
   {
     "LazyVim/LazyVim",
@@ -97,6 +98,59 @@ return {
       end
 
       return opts
+    end,
+  },
+
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
+    opts = function()
+      return {
+        options = {
+          theme = "dracula",
+        },
+        sections = {
+          lualine_a = { "mode" },
+          lualine_b = { "branch" },
+          lualine_c = {
+            {
+              -- Custom component to show the repository name
+              function()
+                -- Use `git rev-parse --show-toplevel` to get the top-level directory of the Git repository
+                local handle = io.popen("git rev-parse --show-toplevel 2> /dev/null")
+                local result = handle:read("*a")
+                handle:close()
+                if result == "" then
+                  return "[No Repo]"
+                else
+                  -- Extract the directory name (repository name) from the result
+                  return vim.fn.fnamemodify(result, ":t")
+                end
+              end,
+              icon = "", -- Optional: You can change or remove the icon
+              color = { fg = "#fabd2f", gui = "bold" }, -- Customize the color
+            },
+
+            {
+              "filename",
+              path = 1, -- Show the full path of the file in the project
+            },
+          },
+          lualine_x = { "encoding", "fileformat", "filetype" },
+          lualine_y = { "progress" },
+          lualine_z = { "location" },
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = { "filename" },
+          lualine_x = { "location" },
+          lualine_y = {},
+          lualine_z = {},
+        },
+        tabline = {},
+        extensions = {},
+      }
     end,
   },
 

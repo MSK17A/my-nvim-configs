@@ -23,4 +23,5 @@ return {
     require("java").setup({})
     require("lspconfig").jdtls.setup({})
   end,
+  enabled = false,
 }

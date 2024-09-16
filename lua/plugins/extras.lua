@@ -14,7 +14,7 @@ return {
 		main = "ibl",
 		opts = function(_, opts)
 			-- Other blankline configuration here e
-			return require("indent-rainbowline").make_opts(opts)
+			require("indent-rainbowline").make_opts(opts)
 		end,
 		dependencies = {
 			"TheGLander/indent-rainbowline.nvim",

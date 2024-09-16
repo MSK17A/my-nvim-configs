@@ -38,8 +38,10 @@ return {
 			-- Key binding
 			local wk = require("which-key")
 			wk.add({
-        { "<leader>f", group = "Find" }, -- group
+				{ "<leader>f", group = "Find" }, -- group
 				{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
+				{ "<leader>fw", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Search current buffer", mode = "n" },
+        { "<leader>fW", "<cmd>Telescope grep_string<cr>", desc = "Grep", mode = "n" }
 			})
 		end,
 	},

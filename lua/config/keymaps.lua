@@ -6,3 +6,6 @@ vim.keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
   replace_keycodes = false,
 })
 vim.g.copilot_no_tab_map = true
+
+local dap = require("dap")
+vim.keymap.set("n", "<Leader>dX", dap.clear_breakpoints, { desc = "Clear breakpoints" })

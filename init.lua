@@ -13,7 +13,3 @@ vim.opt.breakindent = true
 vim.opt.number = true
 -- Set relative line numbers
 vim.opt.relativenumber = true
-
-vim.keymap.set("n", "<leader>T", function()
-	vim.cmd("Telescope")
-end)

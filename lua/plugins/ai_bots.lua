@@ -1,10 +1,10 @@
 return {
-  {
-    "sourcegraph/sg.nvim",
-    config = function()
-      require("sg").setup({})
-    end,
-  },
+  -- {
+  --   "sourcegraph/sg.nvim",
+  --   config = function()
+  --     require("sg").setup({})
+  --   end,
+  -- },
   {
     --   "github/copilot.vim",
     --   config = function()
